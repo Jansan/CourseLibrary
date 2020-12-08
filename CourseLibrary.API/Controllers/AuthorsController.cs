@@ -23,8 +23,13 @@ namespace CourseLibrary.API.Controllers
             var authorsForomRepo = _courseLibraryRepository.GetAuthors();
             return new JsonResult(authorsForomRepo);
         }
+        [HttpGet("{authorId}")]
+        public IActionResult GetAuthor(Guid authorId)
+        {
+            var authorFromRepo = _courseLibraryRepository.GetAuthor(authorId);
+            return new JsonResult(authorFromRepo);
+        }
 
-        
 
     }
 }
